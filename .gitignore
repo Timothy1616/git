@@ -1,25 +1,110 @@
-# 操作系统
-Thumbs.db
-Desktop.ini
-.DS_Store
+# ============================================
+# Git 忽略规则
+# 原则：只跟踪源码与文档，排除依赖、构建产物、日志、密钥
+# ============================================
 
-# 编辑器 / IDE
+# ---------- 操作系统 ----------
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+._*
+*.stackdump
+
+# ---------- 编辑器 / IDE ----------
 .vscode/
 .idea/
+*.iml
 *.swp
+*.swo
 *~
+.history/
+.project
+.classpath
+.settings/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
 
-# 依赖与构建产物
+# ---------- 依赖与包管理 ----------
 node_modules/
+.pnpm-store/
+.pnpm-debug.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.npm/
+.yarn/
+.package-lock.json
+
+# ---------- 构建产物 ----------
 dist/
 build/
+out/
 target/
+bin/
+obj/
+.next/
+.nuxt/
+.gradle/
+*.class
+*.o
+*.obj
 
-# 日志与临时文件
+# ---------- 日志与缓存 ----------
 *.log
+logs/
 *.tmp
+*.temp
+*.bak
+*.orig
+*.rej
+.cache/
+.eslintcache
+*.pid
 
-# 环境变量与密钥
+# ---------- Python ----------
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.venv/
+venv/
+ENV/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+.ipynb_checkpoints/
+
+# ---------- 测试与覆盖率 ----------
+coverage/
+.nyc_output/
+TestResults/
+
+# ---------- 环境变量与密钥（重要）----------
 .env
-.env.local
+.env.*
+!.env.example
+!.env.template
 *.pem
+*.key
+*.p12
+*.pfx
+*.keystore
+*.jks
+id_rsa
+id_rsa.pub
+id_ed25519
+id_ed25519.pub
+secrets.json
+
+# ---------- 临时文件 / Office 锁文件 ----------
+~$*
+*.crdownload
+*.part
